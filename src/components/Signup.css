@@ -3,7 +3,7 @@ h2 {
 }
 
 form {
-  margin-top: 40px;
+  margin: 40px 0px 15px 0px !important;
 }
 
 .form-group {
@@ -22,7 +22,7 @@ form {
 
 #signup p {
   font-size: 0.8rem;
-  margin: 15px 0px;
+  margin: 15px 0px 15px 0px;
 }
 
 form a {
