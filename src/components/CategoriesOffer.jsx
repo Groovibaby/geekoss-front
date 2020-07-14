@@ -1,0 +1,30 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import '../App.css';
+import './AddOffer.css';
+
+const CategoriesOffer = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/api/categories`)
+      .then((response) => response.data)
+      .then((data) => setCategories(data));
+  }, []);
+
+  return (
+    <>
+      {categories.map((item) => (
+        <option
+          key={item.id}
+          id={item.id}
+        >{item.name}
+        </option>
+      ))}
+    </>
+  );
+}
+
+export default CategoriesOffer;
+  

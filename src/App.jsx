@@ -7,6 +7,7 @@ import Homepage from './components/Homepage';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Footer from './components/Footer';
+import AddOffer from './components/AddOffer';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
       </Switch>
       <Switch>
         <Route exact path="/login" component={Login} />
+      </Switch>
+      <Switch>
+        <Route exact path="/add-offer" component={AddOffer} />
       </Switch>
       <Footer />
     </>

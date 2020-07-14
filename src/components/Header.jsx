@@ -8,13 +8,17 @@ const Header = () => {
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-blue">
         <div class="container">
-          <a href="index.html" class="navbar-brand"><img src={Geekoss} class="img-brand" alt="Bienvenue sur Geekoss" /></a>
+          <Link class="navbar-brand" to="/">
+            <img src={Geekoss} class="img-brand" alt="Bienvenue sur Geekoss" />
+          </Link>
           <div>
             <button class="navbar-toggler burger-button" data-toggle="collapse" data-target="#navbarMenu">
               <span class="navbar-toggler-icon"></span>
             </button>
           </div>
-          <a href="add-pick.html" class="hidden-sm"><button type="button" class="btn btn-header">Déposer une annonce</button></a>
+          <Link class="hidden-sm" to="/add-offer">
+            <button type="button" class="btn btn-header">Déposer une annonce</button>
+          </Link>
           <div class="collapse navbar-collapse" id="navbarMenu">
             <ul class="navbar-nav ml-auto">
               <li class="subscribe">
