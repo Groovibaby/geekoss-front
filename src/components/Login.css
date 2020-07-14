@@ -1,0 +1,17 @@
+h2 {
+  margin-top: 30px;
+}
+
+form {
+  margin-top: 40px;
+}
+
+#connect a {
+  text-decoration: none;
+  color: #F4BA19;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+}

@@ -1,38 +1,249 @@
-.App {
+/* OVERALL */
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&display=swap" rel="stylesheet');
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
+  --bg-color: #E3FDFF;
+  --nav: #64C7E6;
+  --button: #F4BA19;
+  --button-hover: #C59205;
+  --bkg-footer:#434343;
+}
+
+h2, h3, h4, h5, p {
   text-align: center;
+  font-weight: bold;
+  font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container-fluid {
+  margin: 0px;
+  padding: 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container-md {
+  width: 500px !important;
+  margin: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn-primary {
+  background-color: var(--button) !important;
+  border: 1px solid rgb(244, 156, 25) !important;
+  padding: 10px;
+  margin: 20px 0px;
+  width: 250px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
+  background-color: var(--button-hover) !important;
+  border: 1px solid rgb(244, 156, 25) !important;
+}
+
+/* HEADER */
+
+.navbar {
+  margin: 0px auto 20px auto;
+  padding: 20px 0px !important;
+}
+
+.bg-blue {
+  background-color: var(--nav);
+}
+
+.img-brand {
+  width: 200px !important;
+}
+
+.searchbar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: start;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-header {
+  background-color: var(--button) !important;
+  border: 1px solid rgb(244, 156, 25) !important;
+  padding: 10px;
+  margin: 0px;
+  width: 250px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  color: #fff !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.btn-header:hover {
+  background-color: var(--button-hover) !important;
+  border: 1px solid rgb(244, 156, 25) !important;
+  color: #fff;
+}
+
+a.nav-link {
+  color: #fff !important;
+}
+
+/* ACTION */
+
+#actions {
+  margin: 50px 0px;
+}
+
+#actions a {
+  text-decoration: none;
+  color: #F4BA19;
+}
+
+.return {
+  display: none;
+}
+
+/* SEARCH */
+
+#search {
+  margin: 20px 0px;
+}
+
+/* CARDS */
+
+.cards {
+  margin: 20px 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: none;
+  text-align: center;
+  border: none !important;
+}
+
+.card-title {
+  font-size: 1rem;
+}
+
+.card-body {
+  padding: 0.8rem;
+  font-size: 0.8rem;
+}
+
+/* FOOTER */
+
+.page-footer {
+  background-color: var(--bkg-footer);
+  color: #fff;
+}
+
+.page-footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.page-footer img {
+  width: 150px;
+}
+
+#img-footer-xs {
+  display: none;
+}
+
+.love {
+  width: 15px !important;
+  padding-bottom: 5px;
+}
+
+.social {
+  width: 30px !important;
+  margin: 0px 15px;
+}
+
+@media screen and (max-width: 770px) {
+  h2 {
+    font-size: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  h3 {
+      font-size: 1.5rem;
+      text-align: center;
+  }
+  .card {
+      margin: 15px 0px;
+  }
+  .card-title {
+      font-size: 0.7rem;
+      text-align: left;
+  }
+  .card-text {
+      font-size: 0.6rem;
+  }
+  .return {
+      display: block;
+  }
+  .btn-header {
+      display: none !important;
+  }
+  .img-brand {
+      margin-left: 15px;
+      width: 170px !important;
+  }
+  .social-media {
+      display: flex;
+      justify-content: center;
+  }
+  #img-footer-lg {
+      display: none;
+  }
+  #img-footer-xs {
+      text-align: center;
+      margin: 20px auto;
+  }
+  .navbar-toggler {
+      margin-right: 15px;
+  }
+  .burger-button {
+      display: flex !important;
+      justify-content: flex-end !important;
+  }
+  .navbar-dark .navbar-toggler {
+      border-color: var(--nav);
+  }
+  .nav-link {
+      display: flex !important;
+      justify-content: center;
+  }
+  .hidden-sm {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .container-md {
+      width: 300px;
+      margin: auto;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .subscribe {
+      border: 1px solid #fff;
+      border-radius: 3px;
+      text-decoration: none;
+      color: #fff;
+      margin: 0px;
+  }
+  .subscribe:hover {
+      border: 1px solid #fff;
+      background-color: #fff;
+      text-decoration: none;
+      color: var(--nav) !important;
+      margin: 0px;
+  }
+  a.nav-link-sub:hover {
+      color: var(--nav) !important;
+  }
+  #sub-link:hover {
+      color: var(--nav) !important;
+  }
+  .hidden {
+      display: none;
   }
 }
