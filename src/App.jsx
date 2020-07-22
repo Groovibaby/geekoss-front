@@ -15,14 +15,8 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={Homepage} />
-      </Switch>
-      <Switch>
         <Route exact path="/signup" component={Signup} />
-      </Switch>
-      <Switch>
         <Route exact path="/login" component={Login} />
-      </Switch>
-      <Switch>
         <Route exact path="/add-offer" component={AddOffer} />
       </Switch>
       <Footer />
