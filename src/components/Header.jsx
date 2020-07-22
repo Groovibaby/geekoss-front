@@ -66,7 +66,7 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarMenu">
             <div className="navbar-nav ml-auto">
               <div className="User-Name">
-                Salut {Profile.firstname}
+                Salut {Profile.pseudo}
               </div>
               <div
                 className="Disconnect"

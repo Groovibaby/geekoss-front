@@ -18,7 +18,7 @@ const CategoriesOffer = () => {
       {categories.map((item) => (
         <option
           key={item.id}
-          id={item.id}
+          value={item.id}
         >{item.name}
         </option>
       ))}
