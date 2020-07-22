@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AuthProvider from './components/contexts/AuthContext';
+import PrivateRoute from './components/PrivateRoute';
 import Header from './components/Header';
 import Homepage from './components/Homepage';
 import Signup from './components/Signup';
@@ -13,15 +15,17 @@ import UserAccount from './components/UserAccount';
 function App() {
   return (
     <>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={Homepage} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/add-offer" component={AddOffer} />
-        <Route exact path="/user-account" component={UserAccount} />
-      </Switch>
-      <Footer />
+      <AuthProvider>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/add-offer" component={AddOffer} />
+          <PrivateRoute exact path="/user-account" component={UserAccount} />
+        </Switch>
+        <Footer />
+      </AuthProvider>
     </>
   );
 }

@@ -1,34 +1,34 @@
-import React, { useState } from 'react';
+import React, { useReducer, useContext } from 'react';
 import { Form } from 'react-bootstrap';
 import axios from 'axios';
+import { authContext } from './contexts/AuthContext';
 import '../App.css';
 import './Signup.css';
 
-const Login = () => {
-  const [inputs, setInputs] = useState({
-    email: '',
-    password: '',
-  });
+const Login = (props) => {
+  const { setAuthData } = useContext(authContext);
+  const [userInput, setUserInput] = useReducer(
+    (state, newState) => ({ ...state, ...newState }),
+    {
+      email: '',
+      password: '',
+    }
+  );
 
-  const submitForm = (event) => {
-    event.preventDefault();
-    const url = 'http://localhost:3000/api/users';
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserInput({ [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const url = 'http://localhost:3000/api/auth/login/user';
     axios
-      .post(url, inputs)
-      .then((res) => res.data)
-      .catch((e) => {
-        alert(`Erreur lors de l'ajout de l'utilisateur : ${e.message}`);
-      });
+      .post(url, userInput)
+      .then((res) => setAuthData(res.data.token))
+      .then(() => props.history.push('/user-account'))
+      .catch();
   };
-
-  const onChange = (e) => {
-    setInputs({
-      ...inputs,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  console.log(inputs);
 
   return (
     <>
@@ -36,11 +36,11 @@ const Login = () => {
       <div class="col-12">
           <h2>Je me connecte !</h2>
           <div class="container-md">
-            <Form onSubmit={submitForm}>
-                <Form.Group onChange={onChange}>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group onChange={handleChange}>
                   <Form.Control type="text" name="email" placeholder="Email"/>
                 </Form.Group>
-                <Form.Group onChange={onChange}>
+                <Form.Group onChange={handleChange}>
                   <Form.Control type="password" name="password" placeholder="Mot de passe"/>
                 </Form.Group>
                 <div className="d-flex justify-content-center">
