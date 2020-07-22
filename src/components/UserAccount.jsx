@@ -24,20 +24,19 @@ const UserAccount = () => {
       .then((data) => setProfile(data.authData.admin[0]));
   }, [auth.data]);
 
-  console.log('Profile', Profile);
-  
   return (
     <>
       <section id="signup">
-        <div class="col-12">
+        {/* {!Profile.firstname === '' && Profile.map((item) => window.localStorage.setItem(`${item}`, JSON.stringify(item)))} */}
+        <div className="col-12">
           <h2>Je suis inscris !</h2>
-          <div class="container-md">
+          <div className="container-md">
           <h1>
             Bienvenue {Profile.firstname} {Profile.lastname}
           </h1>
           </div>
         </div>
-        <p class="d-flex justify-content-center"><a href="#">C'est compliqué, aidez-moi !</a></p>
+        <p className="d-flex justify-content-center"><a href="#">C'est compliqué, aidez-moi !</a></p>
       </section>
     </>
   )

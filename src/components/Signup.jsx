@@ -52,9 +52,9 @@ const Signup = () => {
         </Modal.Footer>
       </Modal>
       <section id="signup">
-        <div class="col-12">
+        <div className="col-12">
           <h2>Je m'inscris direct !</h2>
-          <div class="container-md">
+          <div className="container-md">
             <Form onSubmit={submitForm}>
               <Form.Group onChange={onChange}>
                 <Form.Control type="text" name="pseudo" placeholder="Pseudo de Geekoss"/>
@@ -77,9 +77,9 @@ const Signup = () => {
               <Form.Group onChange={onChange}>
                 <Form.Control type="password" name="password" placeholder="Mot de passe"/>
               </Form.Group>
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input" name="newsletter_subscriber"/>
-                <label class="form-check-label" for="newsletter_subscriber">Je m'inscris à la newsletter</label>
+              <div className="form-check">
+                <input type="checkbox" className="form-check-input" name="newsletter_subscriber"/>
+                <label className="form-check-label" for="newsletter_subscriber">Je m'inscris à la newsletter</label>
               </div>
               <p>En m'inscrivant je confirme avoir lu et accepté les <a href="terms.html">Termes & Conditions et Politique de confidentialité</a> de Geekoss. Je confirme avoir au moins 18 ans.</p>
               <div className="d-flex justify-content-center">
@@ -94,7 +94,7 @@ const Signup = () => {
             </Form>
           </div>
         </div>
-        <p class="d-flex justify-content-center"><a href="#">C'est compliqué, aidez-moi !</a></p>
+        <p className="d-flex justify-content-center"><a href="#">C'est compliqué, aidez-moi !</a></p>
       </section>
     </>
   )

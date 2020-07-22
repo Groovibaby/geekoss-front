@@ -58,9 +58,13 @@ h2, h3, h4, h5, p {
   width: 200px !important;
 }
 
-.searchbar {
-  display: flex;
-  justify-content: start;
+.fa-power-off {
+  color: #fff;
+}
+
+.User-Name {
+  color: #fff;
+  margin-right: 15px;
 }
 
 .btn-header {

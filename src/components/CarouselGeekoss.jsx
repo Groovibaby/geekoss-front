@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import axios from 'axios';
 
 const CarouselGeekoss = () => {
-  const [index, setIndex] = useState(0);
   const [slides, setSlides] = useState([]);
 
   const settings = {

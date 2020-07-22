@@ -33,9 +33,9 @@ const Login = (props) => {
   return (
     <>
     <section id="connect">
-      <div class="col-12">
+      <div className="col-12">
           <h2>Je me connecte !</h2>
-          <div class="container-md">
+          <div className="container-md">
             <Form onSubmit={handleSubmit}>
                 <Form.Group onChange={handleChange}>
                   <Form.Control type="text" name="email" placeholder="Email"/>
@@ -54,8 +54,8 @@ const Login = (props) => {
               </Form>
           </div>
       </div>
-      <p class="d-flex justify-content-center"><a href="#">J'ai oublié mon mot de passe</a></p>
-      <p class="d-flex justify-content-center"><a href="#">C'est compliqué, aidez-moi !</a></p>
+      <p className="d-flex justify-content-center"><a href="#">J'ai oublié mon mot de passe</a></p>
+      <p className="d-flex justify-content-center"><a href="#">C'est compliqué, aidez-moi !</a></p>
     </section>
     </>
   )

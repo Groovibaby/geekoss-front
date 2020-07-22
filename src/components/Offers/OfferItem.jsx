@@ -15,11 +15,11 @@ const OfferItem = (props) => {
 
   return (
     <>
-      <div class="card col-6 col-md-3">
-        <h5 class="card-title">{title}</h5>
-        <img class="card-img-top" src={photo} alt={title}/>
-        <div class="card-body">
-          <p class="card-text">{price}€ - Vendu par {seller.filter((item) => item.id === user).map((item) => item.firstname)}</p>
+      <div className="card col-6 col-md-3">
+        <h5 className="card-title">{title}</h5>
+        <img className="card-img-top" src={photo} alt={title}/>
+        <div className="card-body">
+          <p className="card-text">{price}€ - Vendu par {seller.filter((item) => item.id === user).map((item) => item.firstname)}</p>
         </div>
       </div>
     </>

@@ -5,7 +5,7 @@ import OffersList from './OffersList';
 const Offers = () => {
   return (
     <>
-      <section class="cards container">
+      <section className="cards container">
         <OffersList />
       </section>
     </>
