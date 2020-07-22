@@ -8,6 +8,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Footer from './components/Footer';
 import AddOffer from './components/AddOffer';
+import UserAccount from './components/UserAccount';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/add-offer" component={AddOffer} />
+        <Route exact path="/user-account" component={UserAccount} />
       </Switch>
       <Footer />
     </>

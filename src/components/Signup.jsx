@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Form, Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
 import './Signup.css';
@@ -12,20 +13,18 @@ const Signup = () => {
     email: '',
     password: '',
     avatar: '',
-    newsletter_subscriber: 0,
   });
 
   const [show, handleShow] = useState(false);
 
   const submitForm = (event) => {
     event.preventDefault();
-    const url = 'http://localhost:3000/api/games';
+    const url = 'http://localhost:3000/api/users';
     axios
       .post(url, inputs)
       .then((res) => res.data)
       .catch((e) => {
-        // eslint-disable-next-line no-alert
-        alert(`Erreur lors de l'ajout du jeu : ${e.message}`);
+        alert(`Erreur lors de l'ajout de l'utilisateur : ${e.message}`);
       });
   };
 
@@ -45,16 +44,17 @@ const Signup = () => {
           <Modal.Title>Ton compte a bien été créé !</Modal.Title>
         </Modal.Header>
         <Modal.Footer>
-          <button type="button" className="ButtonAction Action">
-            Ok
-          </button>
+          <Link to="/login">
+            <button type="button" className="ButtonAction Action">
+              Ok
+            </button>
+          </Link>
         </Modal.Footer>
       </Modal>
       <section id="signup">
         <div class="col-12">
           <h2>Je m'inscris direct !</h2>
           <div class="container-md">
-
             <Form onSubmit={submitForm}>
               <Form.Group onChange={onChange}>
                 <Form.Control type="text" name="pseudo" placeholder="Pseudo de Geekoss"/>
@@ -78,7 +78,7 @@ const Signup = () => {
                 <Form.Control type="password" name="password" placeholder="Mot de passe"/>
               </Form.Group>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" checked={inputs.newsletter_subscriber} name="newsletter_subscriber" onChange={onChange}/>
+                <input type="checkbox" class="form-check-input" name="newsletter_subscriber"/>
                 <label class="form-check-label" for="newsletter_subscriber">Je m'inscris à la newsletter</label>
               </div>
               <p>En m'inscrivant je confirme avoir lu et accepté les <a href="terms.html">Termes & Conditions et Politique de confidentialité</a> de Geekoss. Je confirme avoir au moins 18 ans.</p>
