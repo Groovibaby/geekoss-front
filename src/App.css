@@ -13,7 +13,7 @@ body {
   --bkg-footer:#434343;
 }
 
-h2, h3, h4, h5, p {
+h1, h2, h3, h4, h5, p {
   text-align: center;
   font-weight: bold;
   font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
@@ -102,6 +102,23 @@ a.nav-link {
   display: none;
 }
 
+/* BUTTONS */
+
+.ButtonAction {
+  text-align: center;
+  color: #fff;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 5px;
+}
+
+.Action {
+  background-color: #f1b155;
+}
+.Action:hover {
+  background-color: rgb(207, 146, 60);
+}
+
 /* CARDS */
 
 .cards {
@@ -116,6 +133,15 @@ a.nav-link {
   border: none !important;
 }
 
+.card a {
+  color: #000;
+}
+
+.card a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
 .card-title {
   font-size: 1rem;
 }
@@ -128,6 +154,36 @@ a.nav-link {
 .card-img-top {
   height: 350px;
   object-fit: cover;
+}
+
+/* USERBOARD */
+
+.UserBoard-Left h2 {
+  font-size: 1.2rem;
+}
+
+.Avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.Avatar img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* OFFERDETAILS */
+
+.Details-Img {
+  height: 400px;
+  width: 250px;
+  object-fit: cover;
+}
+
+.Details-Button {
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* FOOTER */

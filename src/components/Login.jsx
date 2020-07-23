@@ -32,31 +32,31 @@ const Login = (props) => {
 
   return (
     <>
-    <section id="connect">
-      <div className="col-12">
-          <h2>Je me connecte !</h2>
-          <div className="container-md">
-            <Form onSubmit={handleSubmit}>
-                <Form.Group onChange={handleChange}>
-                  <Form.Control type="text" name="email" placeholder="Email"/>
-                </Form.Group>
-                <Form.Group onChange={handleChange}>
-                  <Form.Control type="password" name="password" placeholder="Mot de passe"/>
-                </Form.Group>
-                <div className="d-flex justify-content-center">
-                  <button
-                    className="btn btn-primary"
-                    type="submit"
-                  >
-                    Je me connecte
-                  </button>
-                </div>
-              </Form>
-          </div>
-      </div>
-      <p className="d-flex justify-content-center"><a href="#">J'ai oublié mon mot de passe</a></p>
-      <p className="d-flex justify-content-center"><a href="#">C'est compliqué, aidez-moi !</a></p>
-    </section>
+      <section id="connect">
+        <div className="col-12">
+            <h2>Je me connecte !</h2>
+            <div className="container-md">
+              <Form onSubmit={handleSubmit}>
+                  <Form.Group onChange={handleChange}>
+                    <Form.Control type="text" name="email" placeholder="Email"/>
+                  </Form.Group>
+                  <Form.Group onChange={handleChange}>
+                    <Form.Control type="password" name="password" placeholder="Mot de passe"/>
+                  </Form.Group>
+                  <div className="d-flex justify-content-center">
+                    <button
+                      className="btn btn-primary"
+                      type="submit"
+                    >
+                      Je me connecte
+                    </button>
+                  </div>
+                </Form>
+            </div>
+        </div>
+        <p className="d-flex justify-content-center"><a href="#">J'ai oublié mon mot de passe</a></p>
+        <p className="d-flex justify-content-center"><a href="#">C'est compliqué, aidez-moi !</a></p>
+      </section>
     </>
   )
 };

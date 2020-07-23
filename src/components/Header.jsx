@@ -27,6 +27,7 @@ const Header = () => {
 
   const Logout = () => {
     setAuthData(null);
+    localStorage.clear();
   };
 
   return (
@@ -65,9 +66,11 @@ const Header = () => {
           :
           <div className="collapse navbar-collapse" id="navbarMenu">
             <div className="navbar-nav ml-auto">
-              <div className="User-Name">
-                Salut {Profile.pseudo}
-              </div>
+              <Link to="/user-account">
+                <div className="User-Name">
+                  Salut {Profile.pseudo}
+                </div>
+              </Link>
               <div
                 className="Disconnect"
                 role="button"
