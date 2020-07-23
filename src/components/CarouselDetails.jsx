@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 import axios from 'axios';
 
@@ -6,6 +7,8 @@ const CarouselDetails = () => {
   const [slides, setSlides] = useState([]);
 
   const settings = {
+    autoplay: true,
+    autoplaySpeed: 3000,
     centerMode: true,
     centerPadding: '60px',
     slidesToShow: 3,
@@ -42,15 +45,15 @@ const CarouselDetails = () => {
     <>
     <Slider {...settings} className="container Slider-Size-Details">
       {slides.map((item) => 
-          <div className="Slider-Body-Details">
-            <img className="Slider-Image-Details d-block w-100"
-              src={item.photo1}
-              alt={item.title}
-            />
-              <div className="Slider-Text-Details">
-                <h3>{item.title}</h3>
-              </div>
-          </div>
+        <Link className="Slider-Body-Details" to={`/offer-details/${item.id}`}>
+          <img className="Slider-Image-Details d-block w-100"
+            src={item.photo1}
+            alt={item.title}
+          />
+            <div className="Slider-Text-Details">
+              <h3>{item.title}</h3>
+            </div>
+        </Link>
       )}
     </Slider>
     </>

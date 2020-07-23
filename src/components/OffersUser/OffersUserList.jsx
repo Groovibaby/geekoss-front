@@ -20,6 +20,7 @@ const OffersUserList = () => {
           id={item.id}
           title={item.title}
           photo={item.photo1}
+          price={item.price}
         />
       ))}
     </>

@@ -13,6 +13,7 @@ const UserAccount = () => {
     firstname: '',
     lastname: '',
     pseudo: '',
+    avatar: '',
   });
   const [inputs, setInputs] = useState([]);
   const [inputsToSend, setInputsToSend] = useState({
@@ -54,13 +55,14 @@ const UserAccount = () => {
     window.localStorage.setItem('firstname', JSON.stringify(Profile.firstname));
     window.localStorage.setItem('lastname', JSON.stringify(Profile.lastname));
     window.localStorage.setItem('pseudo', JSON.stringify(Profile.pseudo));
+    window.localStorage.setItem('avatar', JSON.stringify(Profile.avatar));
     axios
       .get(`http://localhost:3000/api/users/${window.localStorage.getItem('id')}`)
       .then((response) => response.data)
       .then((data) => setInputs(data));
     setConnect(false);
   }
-
+  console.log(localStorage.getItem('avatar'));
   return (
     <>
       <Modal size="lg" show={connect} centered>
@@ -90,7 +92,7 @@ const UserAccount = () => {
             <div className="col-4 UserBoard-Left">
               <div className="Avatar">
                 {inputs[0] && !inputs[0]['avatar'] === null ? (
-                  <img src={inputs[0]['avatar']} alt="avatar" />
+                  <img src={localStorage.getItem('avatar')} alt="avatar" />
                 ) : (
                   <img src={defaultImg} alt="avatar" />
                 )}

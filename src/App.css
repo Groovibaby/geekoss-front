@@ -36,6 +36,7 @@ p {
 .btn-primary {
   background-color: var(--button) !important;
   border: 1px solid rgb(244, 156, 25) !important;
+  transition: transform .2s;
   padding: 10px !important;
   margin: 20px 0px !important;
   width: 250px;
@@ -45,6 +46,7 @@ p {
 .btn-primary:hover {
   background-color: var(--button-hover) !important;
   border: 1px solid rgb(244, 156, 25) !important;
+  transform: scale(1.05);
 }
 
 /* HEADER */
@@ -78,12 +80,14 @@ p {
   margin: 0px;
   width: 250px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  transition: transform .2s;
   color: #fff !important;
 }
 
 .btn-header:hover {
   background-color: var(--button-hover) !important;
   border: 1px solid rgb(244, 156, 25) !important;
+  transform: scale(1.05);
   color: #fff;
 }
 
@@ -164,6 +168,10 @@ a.nav-link {
 
 .UserBoard-Left h2 {
   font-size: 1.2rem;
+}
+
+.UserBoard-Right h2 {
+  text-align: left;
 }
 
 .Avatar {
@@ -307,6 +315,11 @@ a.nav-link {
   height: 200px;
   padding-left: 5px;
   padding-right: 5px;
+  transition: transform .2s;
+}
+
+.Slider-Image-Details:hover {
+  transform: scale(1.05);
 }
 
 .slick-prev:before, .slick-next:before {
