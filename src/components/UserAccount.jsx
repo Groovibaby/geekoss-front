@@ -84,9 +84,9 @@ const UserAccount = () => {
         </Modal.Footer>
       </Modal>
       <section id="signup">
-        <div className="col-12">
+        <div className="container">
           <h1>Mon profil</h1>
-          <div className="container row">
+          <div className="row">
             <div className="col-4 UserBoard-Left">
               <div className="Avatar">
                 {inputs[0] && !inputs[0]['avatar'] === null ? (
