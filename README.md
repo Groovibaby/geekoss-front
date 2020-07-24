@@ -1,3 +1,10 @@
+## Lien vers les tous les repos Geekoss
+
+Geekoss Front : https://github.com/Groovibaby/geekoss-front
+Geekoss Back : https://github.com/Groovibaby/geekoss-back
+Geekoss Admin : https://github.com/Groovibaby/geekoss-admin
+Geekoss BDD : http://geekoss.fr/docs/geekoss.sql
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
