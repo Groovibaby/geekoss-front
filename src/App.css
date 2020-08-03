@@ -139,6 +139,7 @@ a.nav-link {
   border: none;
   text-align: center;
   border: none !important;
+  margin-bottom: 10px;
 }
 
 .card a {
