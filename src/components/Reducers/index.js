@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import ClickCounter from "./counterClick";
+import SetInfoUserRedux from "./setUserInfo";
 
 export default combineReducers({
-  ClickCounter,
+  SetInfoUserRedux,
 });

@@ -1,7 +1,8 @@
-export const counterClick = () => {
+const setUserInfo = (payload) => {
   return {
-    type: "INCREMENT_COUNTER",
+    type: "SET_USERINPUTS",
+    payload,
   };
 };
 
-//export default counterClick;
+export default setUserInfo;

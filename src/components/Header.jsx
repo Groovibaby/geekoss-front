@@ -5,7 +5,6 @@ import { authContext } from "./contexts/AuthContext";
 import { connect } from "react-redux";
 import axios from "axios";
 import Geekoss from "../img/geekoss-logo-blank.png";
-import { counterClick } from "./Action/index";
 
 const Header = ({ dispatch }) => {
   const { setAuthData, auth } = useContext(authContext);
@@ -26,10 +25,6 @@ const Header = ({ dispatch }) => {
       .then((response) => response.data)
       .then((data) => setProfile(data.authData.admin[0]));
   }, [auth.data]);
-
-  const increment = () => {
-    dispatch(counterClick());
-  };
 
   const Logout = () => {
     setAuthData(null);
@@ -64,9 +59,6 @@ const Header = ({ dispatch }) => {
           {!auth.data ? (
             <div className="collapse navbar-collapse" id="navbarMenu">
               <ul className="navbar-nav ml-auto">
-                <li className="subscribe nav-link" onClick={() => increment()}>
-                  +1
-                </li>
                 <li className="subscribe">
                   <Link className="nav-link" id="sub-link" to="/signup">
                     S'inscrire
