@@ -3,6 +3,7 @@ import "../App.css";
 import { Link } from "react-router-dom";
 import { authContext } from "./contexts/AuthContext";
 import { connect } from "react-redux";
+import { resetUserInfo } from "./Action/index";
 import axios from "axios";
 import Geekoss from "../img/geekoss-logo-blank.png";
 
@@ -29,6 +30,7 @@ const Header = ({ dispatch }) => {
   const Logout = () => {
     setAuthData(null);
     localStorage.clear();
+    dispatch(resetUserInfo());
   };
 
   return (
@@ -51,11 +53,20 @@ const Header = ({ dispatch }) => {
               <span className="navbar-toggler-icon"></span>
             </button>
           </div>
-          <Link className="hidden-sm" to="/add-offer">
-            <button type="button" className="btn btn-header">
-              Déposer une annonce
-            </button>
-          </Link>
+          {!auth.data ? (
+            <Link className="hidden-sm" to="/login">
+              <button type="button" className="btn btn-header">
+                Déposer une annonce
+              </button>
+            </Link>
+          ) : (
+            <Link className="hidden-sm" to="/add-offer">
+              <button type="button" className="btn btn-header">
+                Déposer une annonce
+              </button>
+            </Link>
+          )}
+
           {!auth.data ? (
             <div className="collapse navbar-collapse" id="navbarMenu">
               <ul className="navbar-nav ml-auto">

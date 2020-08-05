@@ -23,10 +23,10 @@ function App() {
           <Route exact path="/" component={Homepage} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/add-offer" component={AddOffer} />
           <Route exact path="/offer-details/:id" component={OfferDetails} />
           <Route exact path="/legal-notice" component={LegalNotice} />
           <PrivateRoute exact path="/user-account" component={UserAccount} />
+          <PrivateRoute exact path="/add-offer" component={AddOffer} />
         </Switch>
         <Footer />
       </AuthProvider>

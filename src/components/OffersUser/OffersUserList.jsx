@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import OfferUserItem from './OfferUserItem';
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import axios from "axios";
+import OfferUserItem from "./OfferUserItem";
 
-const OffersUserList = () => {
+const OffersUserList = ({ informations }) => {
   const [offers, setOffers] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/offers/user/${localStorage.getItem('id')}`)
+      .get(`http://localhost:3000/api/offers/user/${informations.id}`)
       .then((response) => response.data)
       .then((data) => setOffers(data));
-  }, []);
+  });
 
   return (
     <>
@@ -27,4 +28,8 @@ const OffersUserList = () => {
   );
 };
 
-export default OffersUserList;
+const mapStateToProps = (state) => ({
+  informations: state.SetInfoUserRedux.inputs,
+});
+
+export default connect(mapStateToProps)(OffersUserList);

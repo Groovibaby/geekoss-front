@@ -24,6 +24,18 @@ const setUserInfo = (
           pseudo: action.payload.pseudo,
         },
       };
+    case "RESET_USERINPUTS":
+      return {
+        ...state,
+        inputs: {
+          id: null,
+          firstname: null,
+          lastname: null,
+          email: null,
+          avatar: null,
+          pseudo: null,
+        },
+      };
     default:
       return state;
   }
