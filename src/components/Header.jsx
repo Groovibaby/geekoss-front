@@ -110,7 +110,7 @@ const Header = ({ dispatch }) => {
                   <div className="Favorites">
                     <Link to="/user-account">
                       <span className="fas fa-user-astronaut" />
-                      <div className="User-Name">Salut {Profile.pseudo}</div>
+                      <div className="User-Name">{Profile.pseudo}</div>
                     </Link>
                   </div>
                   <div
