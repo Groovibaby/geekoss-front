@@ -77,9 +77,12 @@ p {
   color: #fff;
 }
 
+.fa-heart {
+  color: #fff;
+}
+
 .User-Name {
   color: #fff;
-  margin-right: 15px;
 }
 
 .btn-header {
@@ -102,6 +105,25 @@ p {
 
 a.nav-link {
   color: #fff !important;
+}
+
+.Favorites {
+  display: flex;
+  text-align: center;
+  margin-right: 15px;
+}
+
+.Favorites a {
+  color: #fff !important;
+}
+
+.NavConnect {
+  display: flex;
+  align-items: center;
+}
+
+.Disconnect {
+  margin-left: 15px;
 }
 
 /* ACTION */

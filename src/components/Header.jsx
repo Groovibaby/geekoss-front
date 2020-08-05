@@ -14,6 +14,7 @@ const Header = ({ dispatch }) => {
     lastname: "",
     pseudo: "",
   });
+  const [isHover, setIsHover] = useState(false);
 
   useEffect(() => {
     axios({
@@ -31,6 +32,10 @@ const Header = ({ dispatch }) => {
     setAuthData(null);
     localStorage.clear();
     dispatch(resetUserInfo());
+  };
+
+  const handleHover = () => {
+    setIsHover(!isHover);
   };
 
   return (
@@ -66,7 +71,6 @@ const Header = ({ dispatch }) => {
               </button>
             </Link>
           )}
-
           {!auth.data ? (
             <div className="collapse navbar-collapse" id="navbarMenu">
               <ul className="navbar-nav ml-auto">
@@ -90,16 +94,33 @@ const Header = ({ dispatch }) => {
           ) : (
             <div className="collapse navbar-collapse" id="navbarMenu">
               <div className="navbar-nav ml-auto">
-                <Link to="/user-account">
-                  <div className="User-Name">Salut {Profile.pseudo}</div>
-                </Link>
                 <div
-                  className="Disconnect"
-                  role="button"
-                  tabIndex={0}
-                  onClick={Logout}
+                  className="Favorites"
+                  onMouseEnter={handleHover}
+                  onMouseLeave={handleHover}
                 >
-                  <span className="fas fa-power-off" />
+                  <Link to="/add-offer">
+                    <span
+                      className={isHover ? "fas fa-heart" : "far fa-heart"}
+                    />
+                    <div>Favoris</div>
+                  </Link>
+                </div>
+                <div className="NavConnect">
+                  <div className="Favorites">
+                    <Link to="/user-account">
+                      <span className="fas fa-user-astronaut" />
+                      <div className="User-Name">Salut {Profile.pseudo}</div>
+                    </Link>
+                  </div>
+                  <div
+                    className="Disconnect"
+                    role="button"
+                    tabIndex={0}
+                    onClick={Logout}
+                  >
+                    <span className="fas fa-power-off" />
+                  </div>
                 </div>
               </div>
             </div>
