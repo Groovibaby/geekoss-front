@@ -99,7 +99,7 @@ const Header = ({ dispatch }) => {
                   onMouseEnter={handleHover}
                   onMouseLeave={handleHover}
                 >
-                  <Link to="/add-offer">
+                  <Link to="/favorites">
                     <span
                       className={isHover ? "fas fa-heart" : "far fa-heart"}
                     />

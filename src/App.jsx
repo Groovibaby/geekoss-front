@@ -13,6 +13,7 @@ import AddOffer from "./components/AddOffer";
 import UserAccount from "./components/UserAccount";
 import OfferDetails from "./components/OfferDetails";
 import LegalNotice from "./components/LegalNotice";
+import Favorites from "./components/Favorites/Favorites";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/legal-notice" component={LegalNotice} />
           <PrivateRoute exact path="/user-account" component={UserAccount} />
           <PrivateRoute exact path="/add-offer" component={AddOffer} />
+          <PrivateRoute exact path="/favorites" component={Favorites} />
         </Switch>
         <Footer />
       </AuthProvider>
