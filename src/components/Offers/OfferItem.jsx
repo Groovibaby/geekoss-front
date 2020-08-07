@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { authContext } from "../contexts/AuthContext";
+import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -8,6 +9,7 @@ const OfferItem = (props) => {
   const { id, title, price, photo, user } = props;
   const [seller, setSeller] = useState([]);
   const [userId, setUserId] = useState([]);
+  const [show, handleShow] = useState(false);
 
   useEffect(() => {
     axios
@@ -37,6 +39,25 @@ const OfferItem = (props) => {
 
   return (
     <>
+      <Modal size="lg" show={show} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Cette annonce a été ajoutée à tes favoris !</Modal.Title>
+        </Modal.Header>
+        <Modal.Footer>
+          <button
+            type="button"
+            onClick={() => handleShow(false)}
+            className="ButtonAction Action"
+          >
+            Fermer
+          </button>
+          <Link to="/favorites">
+            <button type="button" className="ButtonAction Action">
+              Accéder aux favoris
+            </button>
+          </Link>
+        </Modal.Footer>
+      </Modal>
       <div className="card col-6 col-md-3">
         <Link to={`offer-details/${id}`}>
           <h5 className="card-title">{title}</h5>
