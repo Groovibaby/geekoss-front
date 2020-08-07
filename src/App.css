@@ -81,6 +81,17 @@ p {
   color: #fff;
 }
 
+.fav-heart {
+  position: absolute;
+  top: 40px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.card-img-top {
+  position: relative;
+}
+
 .User-Name {
   color: #fff;
 }

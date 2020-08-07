@@ -7,10 +7,8 @@ const Favorites = () => {
     <>
       <section id="signup">
         <div className="container">
-          <h1>Vos annonces favories</h1>
-          <div className="row">
-            <FavoritesList />
-          </div>
+          <h1>Vos annonces favorites</h1>
+          <FavoritesList />
         </div>
       </section>
     </>

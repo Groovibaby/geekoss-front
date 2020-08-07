@@ -1,0 +1,33 @@
+.card-fav {
+  border: 1px solid #888;
+  border-radius: 5px;
+  display: flex;
+  margin-bottom: 15px;
+  padding: 0px;
+}
+
+.card-fav-title {
+  font-size: 2rem;
+  text-align: left;
+}
+
+.card-fav-img-top img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.card-fav-body {
+}
+
+.card-fav-text {
+  color: #000;
+}
+
+.card-fav-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
