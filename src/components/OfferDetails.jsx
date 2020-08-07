@@ -62,7 +62,7 @@ const OfferDetails = (props) => {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45246.8300186719!2d-0.621246175435048!3d44.86378340913356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5527e8f751ca81%3A0x796386037b397a89!2sBordeaux!5e0!3m2!1sfr!2sfr!4v1595508025752!5m2!1sfr!2sfr"
               width="600"
               height="450"
-              frameborder="0"
+              frameBorder="0"
               allowfullscreen=""
               aria-hidden="false"
               tabindex="0"
