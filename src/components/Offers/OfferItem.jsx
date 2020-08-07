@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { authContext } from "../contexts/AuthContext";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
-import PropTypes from "prop-types";
 
-const OfferItem = (props, informations) => {
+const OfferItem = (props, { informations }) => {
+  const { auth } = useContext(authContext);
   const { id, title, price, photo, user } = props;
   const [seller, setSeller] = useState([]);
 
@@ -13,7 +14,7 @@ const OfferItem = (props, informations) => {
       .get(`http://localhost:3000/api/users`)
       .then((response) => response.data)
       .then((data) => setSeller(data));
-  }, []);
+  }, [auth.data]);
 
   const handleFav = () => {
     const url = `http://localhost:3000/api/${informations.id}/fav/${id}`;
@@ -24,7 +25,8 @@ const OfferItem = (props, informations) => {
         alert(`Erreur lors de l'ajout de l'annonce en favoris : ${e.message}`);
       });
   };
-
+  console.log("informations offer", informations);
+  console.log("props offer", props);
   return (
     <>
       <div className="card col-6 col-md-3">
@@ -52,10 +54,8 @@ const OfferItem = (props, informations) => {
   );
 };
 
-OfferItem.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-};
+const mapStateToProps = (state) => ({
+  informations: state.SetInfoUserRedux.inputs,
+});
 
-export default connect()(OfferItem);
+export default connect(mapStateToProps)(OfferItem);
