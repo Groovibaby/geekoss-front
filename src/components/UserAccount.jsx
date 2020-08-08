@@ -75,12 +75,13 @@ const UserAccount = ({ dispatch, informations }) => {
                 {informations.firstname} {informations.lastname}
               </h2>
               <Form>
-                <Form.Group onChange={onChange} onSubmit={submitForm}>
+                <Form.Group onSubmit={submitForm}>
                   <Form.Label>Modifie ton avatar</Form.Label>
                   <Form.Control
                     type="text"
                     name="avatar"
                     value={inputsToSend.avatar}
+                    onChange={onChange}
                   />
                 </Form.Group>
                 <button
