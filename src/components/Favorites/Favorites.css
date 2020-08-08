@@ -28,3 +28,8 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.card-fav-top {
+  display: flex;
+  padding: 0px;
+}

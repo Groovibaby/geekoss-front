@@ -184,7 +184,7 @@ const AddOffer = () => {
                   width="600"
                   height="450"
                   frameBorder="0"
-                  allowfullscreen=""
+                  allowFullScreen=""
                   aria-hidden="false"
                   tabindex="0"
                   title="Map"
