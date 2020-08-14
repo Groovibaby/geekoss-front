@@ -35,6 +35,7 @@ const OfferItem = (props) => {
       .catch((e) => {
         alert(`Erreur lors de l'ajout de l'annonce en favoris : ${e.message}`);
       });
+    handleShow(true);
   };
 
   return (
@@ -59,15 +60,15 @@ const OfferItem = (props) => {
         </Modal.Footer>
       </Modal>
       <div className="card col-6 col-md-3">
+        <span
+          title="Ajouter aux favoris"
+          className="far fa-heart fav-heart"
+          onClick={handleFav}
+        />
         <Link to={`offer-details/${id}`}>
           <h5 className="card-title">{title}</h5>
           <div>
             <img className="card-img-top" src={photo} alt={title} />
-            <span
-              title="Ajouter aux favoris"
-              className="far fa-heart fav-heart"
-              onClick={handleFav}
-            />
           </div>
           <div className="card-body">
             <p className="card-text">
