@@ -7,7 +7,7 @@ import "./Favorites.css";
 
 const FavoritesItem = ({ informations, id, title, price, photo, user }) => {
   const [seller, setSeller] = useState([]);
-  const [show, handleShow] = useState(false);
+  const [show, handleShow] = useState(true);
 
   useEffect(() => {
     axios
@@ -24,6 +24,7 @@ const FavoritesItem = ({ informations, id, title, price, photo, user }) => {
       .catch((err) => {
         alert(`Erreur lors de la suppression du favoris : ${err.message}`);
       });
+    handleShow(true);
   };
 
   return (
@@ -60,13 +61,7 @@ const FavoritesItem = ({ informations, id, title, price, photo, user }) => {
           </div>
         </Link>
         <div className="card-fav-btn col-md-3">
-          <button
-            className="btn-primary"
-            onClick={() => {
-              handleShow(true);
-              deleteFav();
-            }}
-          >
+          <button className="btn-primary" onClick={() => deleteFav()}>
             Supprimer l'annonce
           </button>
           <button className="btn-primary">Contacter ce Geekoss</button>
