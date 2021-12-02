@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import '../App.css';
-import './AddOffer.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "../App.css";
+import "./AddOffer.css";
 
 const CategoriesOffer = () => {
   const [categories, setCategories] = useState([]);
@@ -16,15 +16,12 @@ const CategoriesOffer = () => {
   return (
     <>
       {categories.map((item) => (
-        <option
-          key={item.id}
-          value={item.id}
-        >{item.name}
+        <option key={item.id} value={item.id}>
+          {item.name}
         </option>
       ))}
     </>
   );
-}
+};
 
 export default CategoriesOffer;
-  
