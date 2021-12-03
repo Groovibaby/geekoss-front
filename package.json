@@ -8,7 +8,8 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.24.0",
     "bootstrap": "^4.5.0",
-    "eslint": "^8.3.0",
+    "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.2.2",
     "react-dom": "^16.13.1",
@@ -22,7 +23,7 @@
     "yup": "^0.29.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -43,7 +44,6 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^7.11.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.20.2",
