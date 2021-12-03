@@ -7,6 +7,8 @@ import CategoriesOffer from "./CategoriesOffer";
 import "../App.css";
 import "./AddOffer.css";
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 const AddOffer = () => {
   const { auth } = useContext(authContext);
 
@@ -27,7 +29,7 @@ const AddOffer = () => {
 
   const submitForm = (event) => {
     event.preventDefault();
-    const url = "http://localhost:3000/api/offers";
+    const url = `${BASE_URL}/api/offers`;
     axios
       .post(url, inputs)
       .then((res) => res.data)
@@ -46,7 +48,7 @@ const AddOffer = () => {
   useEffect(() => {
     axios({
       method: "post",
-      url: "http://localhost:3000/api/auth",
+      url: `${BASE_URL}/api/auth`,
       headers: {
         Authorization: `Bearer ${auth.data}`,
       },

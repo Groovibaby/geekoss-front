@@ -8,6 +8,8 @@ import OffersUser from "./OffersUser/OffersUser";
 import "../App.css";
 import "./Signup.css";
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 const UserAccount = ({ dispatch, informations }) => {
   const { auth } = useContext(authContext);
   const [inputsToSend, setInputsToSend] = useState({
@@ -21,7 +23,7 @@ const UserAccount = ({ dispatch, informations }) => {
   useEffect(() => {
     axios({
       method: "post",
-      url: "http://localhost:3000/api/auth",
+      url: `${BASE_URL}/api/auth`,
       headers: {
         Authorization: `Bearer ${auth.data}`,
       },
@@ -32,7 +34,7 @@ const UserAccount = ({ dispatch, informations }) => {
 
   const submitForm = (event) => {
     event.preventDefault();
-    const url = `http://localhost:3000/api/users/${informations.id}`;
+    const url = `${BASE_URL}/api/users/${informations.id}`;
     axios.put(url, inputsToSend).then((res) => res.data);
   };
 

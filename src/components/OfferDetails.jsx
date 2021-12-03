@@ -3,6 +3,8 @@ import CarouselDetails from "./CarouselDetails";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 const OfferDetails = (props) => {
   const [info, setInfo] = useState([]);
   const [seller, setSeller] = useState([]);
@@ -10,11 +12,11 @@ const OfferDetails = (props) => {
   useEffect(() => {
     const idOffer = props.match.params.id;
     axios
-      .get(`http://localhost:3000/api/offers/${idOffer}`)
+      .get(`${BASE_URL}/api/offers/${idOffer}`)
       .then((response) => response.data)
       .then((data) => setInfo(data));
     axios
-      .get(`http://localhost:3000/api/users`)
+      .get(`${BASE_URL}/api/users`)
       .then((response) => response.data)
       .then((data) => setSeller(data));
   }, [props.match.params.id]);

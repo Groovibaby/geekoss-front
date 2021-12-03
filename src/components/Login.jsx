@@ -5,6 +5,8 @@ import { authContext } from "./contexts/AuthContext";
 import "../App.css";
 import "./Signup.css";
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 const Login = (props) => {
   const { setAuthData } = useContext(authContext);
   const [userInput, setUserInput] = useReducer(
@@ -22,7 +24,7 @@ const Login = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const url = "http://localhost:3000/api/auth/login/user";
+    const url = `${BASE_URL}/api/auth/login/user`;
     axios
       .post(url, userInput)
       .then((res) => setAuthData(res.data.token))

@@ -3,12 +3,14 @@ import { connect } from "react-redux";
 import axios from "axios";
 import OfferUserItem from "./OfferUserItem";
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 const OffersUserList = ({ informations }) => {
   const [offers, setOffers] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/offers/user/${informations.id}`)
+      .get(`${BASE_URL}/api/offers/user/${informations.id}`)
       .then((response) => response.data)
       .then((data) => setOffers(data));
   });

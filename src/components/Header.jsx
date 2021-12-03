@@ -7,6 +7,8 @@ import { resetUserInfo } from "./Action/index";
 import axios from "axios";
 import Geekoss from "../img/geekoss-logo-blank.png";
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 const Header = ({ dispatch }) => {
   const { setAuthData, auth } = useContext(authContext);
   const [Profile, setProfile] = useState({
@@ -19,7 +21,7 @@ const Header = ({ dispatch }) => {
   useEffect(() => {
     axios({
       method: "post",
-      url: "http://localhost:3000/api/auth",
+      url: `${BASE_URL}/api/auth`,
       headers: {
         Authorization: `Bearer ${auth.data}`,
       },

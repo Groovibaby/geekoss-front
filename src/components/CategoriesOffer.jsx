@@ -3,12 +3,14 @@ import axios from "axios";
 import "../App.css";
 import "./AddOffer.css";
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 const CategoriesOffer = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/categories`)
+      .get(`${BASE_URL}/api/categories`)
       .then((response) => response.data)
       .then((data) => setCategories(data));
   }, []);

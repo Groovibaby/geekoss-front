@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import OfferItem from './OfferItem';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import OfferItem from "./OfferItem";
+
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const OffersList = () => {
   const [offers, setOffers] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/offers`)
+      .get(`${BASE_URL}/api/offers`)
       .then((response) => response.data)
       .then((data) => setOffers(data));
   }, []);
