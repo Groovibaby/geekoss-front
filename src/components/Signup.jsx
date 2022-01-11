@@ -37,8 +37,6 @@ const Signup = () => {
     });
   };
 
-  console.log(inputs);
-
   return (
     <>
       <Modal size="lg" show={show} centered>

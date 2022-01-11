@@ -57,9 +57,8 @@ const AddOffer = () => {
       .then((data) =>
         setInputs({ ...inputs, user_id: data.authData.admin[0].id })
       );
-  });
+  }, []);
 
-  console.log("inputs", inputs);
   return (
     <>
       <Modal size="lg" show={show} centered>

@@ -164,6 +164,7 @@ a.nav-link {
   margin: 20px 0px;
   display: flex;
   flex-wrap: wrap;
+  margin: auto;
 }
 
 .card {
