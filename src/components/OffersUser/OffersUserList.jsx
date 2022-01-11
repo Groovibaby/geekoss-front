@@ -13,7 +13,7 @@ const OffersUserList = ({ informations }) => {
       .get(`${BASE_URL}/api/offers/user/${informations.id}`)
       .then((response) => response.data)
       .then((data) => setOffers(data));
-  });
+  }, []);
 
   return (
     <>

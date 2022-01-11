@@ -30,7 +30,7 @@ const UserAccount = ({ dispatch, informations }) => {
     }).then((res) => {
       dispatch(setUserInfo(res.data.authData.admin[0]));
     });
-  });
+  }, []);
 
   const submitForm = (event) => {
     event.preventDefault();
