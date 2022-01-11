@@ -17,7 +17,7 @@ const Header = ({ dispatch }) => {
     pseudo: "",
   });
   const [isHover, setIsHover] = useState(false);
-  console.log(process.env["REACT_APP_BASE_URL"]);
+
   useEffect(() => {
     axios({
       method: "post",
