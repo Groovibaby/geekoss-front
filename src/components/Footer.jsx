@@ -9,6 +9,7 @@ import pinterest from "../img/Pinterest-blc.png";
 import love from "../img/love.png";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="page-footer font-small stylish-color-dark pt-4">
       <div className="container text-center text-md-left">
@@ -88,7 +89,8 @@ const Footer = () => {
       <hr />
       <div className="footer-copyright text-center py-3">
         <p>
-          © 2020 | Made with <img src={love} className="love" alt="love" /> by{" "}
+          © {currentYear} | Made with{" "}
+          <img src={love} className="love" alt="love" /> by{" "}
           <a
             href="https://www.linkedin.com/in/thomas-lachieze-b96b73103/"
             target="_blank"
